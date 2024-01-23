@@ -1,5 +1,5 @@
-export type PasswordGenerationOptions = {
-  minLength?: number | 10;
+export type PasswordGeneratorOptions = {
+  minLength?: number;
   requireUpperCase?: boolean;
   requireSpecialCharacter?: boolean;
   requireNumber?: boolean;
