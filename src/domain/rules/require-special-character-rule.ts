@@ -1,6 +1,6 @@
-import { PasswordGenerationRule } from "../../types/rule";
+import { IPasswordGenerationRule } from "../../types/rule";
 
-export class RequireSpecialCharacterRule implements PasswordGenerationRule {
+export class RequireSpecialCharacterRule implements IPasswordGenerationRule {
   applyRule(password: string) {
     const characters: string[] = ["!", "@", "#", "$", "%", "&", "?"];
     const specialCharacter =

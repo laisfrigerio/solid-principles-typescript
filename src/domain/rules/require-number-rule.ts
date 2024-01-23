@@ -1,6 +1,6 @@
-import { PasswordGenerationRule } from "../../types/rule";
+import { IPasswordGenerationRule } from "../../types/rule";
 
-export class RequireNumberRule implements PasswordGenerationRule {
+export class RequireNumberRule implements IPasswordGenerationRule {
   applyRule(password: string) {
     const number = Math.floor(Math.random() * 10);
     return password + number;

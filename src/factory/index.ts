@@ -1,10 +1,10 @@
 import { RequireNumberRule } from "../domain/rules/require-number-rule";
 import { RequireUpperCaseRule } from "../domain/rules/require-uppercase-rule";
 import { RequireSpecialCharacterRule } from "../domain/rules/require-special-character-rule";
-import { PasswordGenerationOptions } from "../types/generator";
-import { PasswordGenerationRule } from "../types/rule";
+import { PasswordGeneratorOptions } from "../types/generator";
+import { IPasswordGenerationRule } from "../types/rule";
 
-const ruleClassMap: Record<string, new () => PasswordGenerationRule> = {
+const ruleClassMap: Record<string, new () => IPasswordGenerationRule> = {
   requireUpperCase: RequireUpperCaseRule,
   requireSpecialCharacter: RequireSpecialCharacterRule,
   requireNumber: RequireNumberRule,
@@ -12,9 +12,9 @@ const ruleClassMap: Record<string, new () => PasswordGenerationRule> = {
 
 export class RuleFactory {
   static createRules(
-    options: PasswordGenerationOptions
-  ): PasswordGenerationRule[] {
-    const rules: PasswordGenerationRule[] = [];
+    options: PasswordGeneratorOptions
+  ): IPasswordGenerationRule[] {
+    const rules: IPasswordGenerationRule[] = [];
 
     for (const [option, ruleClass] of Object.entries(ruleClassMap)) {
       if (options[option]) {

@@ -1,6 +1,6 @@
-import { PasswordGenerationRule } from "../../types/rule";
+import { IPasswordGenerationRule } from "../../types/rule";
 
-export class RequireUpperCaseRule implements PasswordGenerationRule {
+export class RequireUpperCaseRule implements IPasswordGenerationRule {
   applyRule(password: string): string {
     const upperCaseLetter = String.fromCharCode(
       65 + Math.floor(Math.random() * 26)

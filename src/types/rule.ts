@@ -1,3 +1,3 @@
-export interface PasswordGenerationRule {
+export interface IPasswordGenerationRule {
   applyRule(password: string): string;
 }
